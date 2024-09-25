@@ -43,3 +43,23 @@ You can find a detailed list of HTTP status codes at: https://developer.mozilla.
 3. **Message Body (if needed)**: This part is optional and is used mainly with methods like POST or PUT. It contains the data being sent to the server, like form data or JSON payloads.
 */
 
+app.use(express.static(path.join(dirname,'/public')))
+
+app.get('/',(res,req)=>{
+    console.log(req.url)
+
+    res.sendFile(path.resolve(dirname,'/public/index.html'))
+})
+
+app.post('/',(res,req)=>{
+    console.log(req.url)
+    res.statusCode(404).send("You know that you don't post on the index right?")
+})
+
+app.get('*',(res,req)=>{
+    res.statusCode(404).send("404 Not found - AND YOU SUCK")
+})
+
+app.listen(3000,()=>{
+    console.log("Server is listening on port 3000")
+})
