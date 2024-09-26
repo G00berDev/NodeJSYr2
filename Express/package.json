@@ -1,7 +1,7 @@
 {
   "scripts": {
     "start": "node app.js",
-    "dev": "nodemon 03-basic-json.js"
+    "dev": "nodemon 04-params-query.js"
   },
   "dependencies": {
     "axios": "^1.7.7",
