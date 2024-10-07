@@ -3,7 +3,7 @@ const app = express()
 const logger = require('./middleware/logger')
 
 app.get('/', logger, (req,res,next)=>{
-    res.send('I JUST LOST MY DOG')
+    res.send('HONEY PIE HONEY PIE')
 })
 
 app.listen(5000,()=>{
